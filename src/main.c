@@ -10,7 +10,7 @@ int main()
   init_input_GPIO(D3, PULLUP);
   init_output_GPIO(D7);
 
-  init_input_GPIO(A0, PULLUP);
+  init_input_GPIO(A0, NO_PULLUP);
   init_input_GPIO(A1, PULLUP);
   
   while(1) {
