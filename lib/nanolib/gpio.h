@@ -28,7 +28,8 @@ typedef enum e_pin_state {LOW, HIGH} t_pin_state;
 void init_input_GPIO(t_nano_pin pin, t_input_mode mode);
 void init_output_GPIO(t_nano_pin pin);
 
-t_pin_state read_input_GPIO(t_nano_pin pin);
+t_pin_state read_state_input_GPIO(t_nano_pin pin);
+double read_analog_input_GPIO(t_nano_pin pin);
 void write_output_GPIO(t_nano_pin pin, t_pin_state state);
 
 #endif

@@ -16,5 +16,6 @@ typedef enum e_nano_pin_id {
 } t_nano_pin;
 
 #include "gpio.h"
+#include "usart0.h"
 
 #endif

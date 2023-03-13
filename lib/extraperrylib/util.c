@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <nanolib.h>
-#include "extraperry_lib.h"
+#include "util.h"
 
 int isPositiveNumber(int number){
     if (number < 0) {
@@ -80,16 +78,14 @@ void draw_rectangle(int height, int width, char border, char corner, char inside
     return;
 }
 
-void show_multiple_tables() {
+void show_multiple_tables(int number) {
+    printf("Table of %d", number);
+    printf("\n\n");
     for(int i = 1; i < 10; i++){
-        printf("Table of %d", i);
-        printf("\n\n");
-        for(int j = 1; j < 10; j++){
-            printf("%d x %d = %d", i, j, i * j);
-            printf("\n");
-        }
-        printf("\n\n");
+        printf("%d x %d = %d", number, i, number * i);
+        printf("\n");
     }
+    printf("\n\n");
     return;
 }
 
@@ -101,18 +97,4 @@ int count_me() {
     static int count = 0;
     count++;
     return count;
-}
-
-//Methodes (Bouton & LED).
-void checkButtonForLed(t_nano_pin button, t_nano_pin led) {
-  if (read_input_GPIO(button) == LOW) {
-    write_output_GPIO(led, HIGH);
-  } else {
-    write_output_GPIO(led, LOW);
-  }
-}
-
-//Methodes (Potentiometre & Serial).
-float checkPotentiometerForSerial(t_nano_pin potentiometer) {
-
 }

@@ -25,7 +25,12 @@ void init_output_GPIO(t_nano_pin pin) {
   *port_list[mapped_port.port_id].ddrx |= _BV(mapped_port.bit);
 }
 
-t_pin_state read_input_GPIO(t_nano_pin pin) {
+t_pin_state read_state_input_GPIO(t_nano_pin pin) {
+  t_pin_port_map mapped_port = pin_port_map[pin];
+  return (*port_list[mapped_port.port_id].pinx & _BV(mapped_port.bit)) >> mapped_port.bit;
+}
+
+double read_analog_input_GPIO(t_nano_pin pin) {
   t_pin_port_map mapped_port = pin_port_map[pin];
   return (*port_list[mapped_port.port_id].pinx & _BV(mapped_port.bit)) >> mapped_port.bit;
 }
