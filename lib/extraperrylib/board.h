@@ -7,6 +7,6 @@
 void checkButtonForLed(t_nano_pin button, t_nano_pin led);
 
 //Methodes (Potentiometre & Serial).
-float checkPotentiometerForSerial(t_nano_pin potentiometer);
+void checkPotentiometerForSerial(t_nano_pin potentiometer);
 
 #endif
